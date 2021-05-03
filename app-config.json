@@ -1,0 +1,35 @@
+{
+	"entryPagePath": "pages/index/index.html",
+	"pages": [
+		"pages/index/index",
+		"pages/logs/logs"
+	],
+	"page": {
+		"pages/index/index.html": {
+			"window": {
+				"usingComponents": {}
+			}
+		},
+		"pages/logs/logs.html": {
+			"window": {
+				"navigationBarTitleText": "查看启动日志",
+				"usingComponents": {}
+			}
+		}
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序获取当前位置天气"
+		}
+	},
+	"global": {
+		"window": {
+			"backgroundTextStyle": "light",
+			"navigationBarBackgroundColor": "#fff",
+			"navigationBarTitleText": "天色",
+			"navigationBarTextStyle": "black",
+			"enablePullDownRefresh": true
+		}
+	},
+	"style": "v2"
+}

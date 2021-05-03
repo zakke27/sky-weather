@@ -1,0 +1,47 @@
+<view>
+    <view bind:tap="onTapChooseLocation" class="location">
+        <image class="location-icon iconfont icon-personLocation"></image>
+        <view class="location-text">{{location}}</view>
+    </view>
+    <view class="dayWeather">
+        <image class="iconfont icon-sun-line" wx:if="{{now.text=='晴'}}"></image>
+        <image class="iconfont icon-sun-cloudy-line" wx:elif="{{now.text=='多云'}}"></image>
+        <image class="iconfont icon-cloudy-line" wx:elif="{{now.text=='阴'}}"></image>
+        <image class="iconfont icon-heavy-showers-line" wx:elif="{{now.text=='雨'||'小雨'||'中雨'||'大雨'||'暴雨'}}"></image>
+        <image class="iconfont icon-snowy-line" wx:elif="{{now.text=='雪'||'小雪'||'中雪'||'大雪'||'暴雪'}}"></image>
+        <view class="temp">{{now.temp+'°'}}</view>
+        <view class="weather-now">{{now.text}} / {{now.windDir}} {{now.windScale}}级</view>
+    </view>
+    <view class="otherWeather">
+        <view class="item">
+            <image class="pop iconfont icon-drizzle-line"></image>
+            <view>降水概率 {{hourly[0].pop+'%'}}</view>
+        </view>
+        <view class="item">
+            <image class="windSpeed iconfont icon-windy-fill"></image>
+            <view>风速 {{hourly[0].windSpeed+'km/h'}}</view>
+        </view>
+        <view class="item">
+            <image class="humidity iconfont icon-temp-hot-fill"></image>
+            <view>相对湿度 {{hourly[0].humidity+'%'}}</view>
+        </view>
+    </view>
+    <view class="timeTips">
+        <view class="timeTips-text">未来24小时的天气预测</view>
+    </view>
+    <scroll-view>
+        <view class="forecast-list">
+            <view class="forecast-item" wx:for="{{hourlyWeather}}">
+                <view class="forecast-time">{{item.time}}</view>
+                <image class="iconfont icon-sun-line" wx:if="{{item.text=='晴'}}"></image>
+                <image class="iconfont icon-sun-cloudy-line" wx:elif="{{item.text=='多云'}}"></image>
+                <image class="iconfont icon-cloudy-line" wx:elif="{{item.text=='阴'}}"></image>
+                <image class="iconfont icon-heavy-showers-line" wx:elif="{{item.text=='雨'||'小雨'||'中雨'||'大雨'||'暴雨'}}"></image>
+                <image class="iconfont icon-snowy-line" wx:elif="{{item.icon=='雪'||'小雪'||'中雪'||'大雪'||'暴雪'}}"></image>
+                <view class="forecast-text">{{item.text}}</view>
+                <view class="forecast-temp">{{item.temp}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="source">气象数据来自 和风天气API</view>

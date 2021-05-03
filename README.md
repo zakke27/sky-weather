@@ -1,24 +1,13 @@
-# sky-weather
+# sky-weather 天色天气微信小程序
 
-## Project setup
-```
-yarn install
-```
+## 预览图
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+![](image/main.png)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## 点击主页面的天色标题下方的定位图标可以进行定位或者搜索地点查询天气状况
 
-### Lints and fixes files
-```
-yarn lint
-```
+![](image/one.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 小程序下部分能够进行滑动查看当天 24 小时天气状况
+
+##天气接口来源于和风天气
