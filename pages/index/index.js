@@ -18,7 +18,7 @@ Page({
     Weather: function (o, e) {
         var n = this, i = {
             location: location ? e + "," + o : "101010100",
-            key: "ce08ad7f1d154e7fa2a348c4b9e38985"
+            key: "此处填写自己的和风天气api的key"
         };
         t._get("https://devapi.heweather.net/v7/weather/now?", i, function (t) {
             var o = t.data.now;
@@ -53,7 +53,7 @@ Page({
     genCodeLocation: function (o, e) {
         var n = this, i = {
             location: o + "," + e,
-            key: "BNJBZ-7JYCP-NQCDS-VSBWY-6YGAQ-JTFD7"
+            key: "此处填写自己腾讯地图api的key"
         };
         t._get("https://apis.map.qq.com/ws/geocoder/v1/?", i, function (t) {
             n.setData({
